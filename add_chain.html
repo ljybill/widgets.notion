@@ -65,6 +65,9 @@
   };
 
   document.querySelector('#icon').addEventListener('click', async function () {
+    if (!window.ethereum) {
+      return;
+    }
     const params = {
       chainId: toHex(73771), // A 0x-prefixed hexadecimal string
       chainName: 'Swimmer Test',
