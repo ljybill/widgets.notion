@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        html {
+            color: #3099f2;
+        }
+
+        .icon {
+            cursor: pointer;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            line-height: 1;
+            background-image: url("data:image/png;base64,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");
+            background-size: cover;
+            vertical-align: baseline;
+        }
+
+        .info-row {
+            display: flex;
+            word-break: break-all;
+        }
+
+        .info-row p {
+            margin-block-start: 0.3em;
+            margin-block-end: 0.3em;
+        }
+
+        .info-row p:first-child {
+            flex: none;
+            width: 10em;
+        }
+    </style>
 </head>
 <body>
-<div>Hello World</div>
+<div>
+    <div class="info">
+        <div class="info-row">
+            <p>Swimmer Test <i class="icon"></i></p>
+        </div>
+        <div class="info-row">
+            <p>PRC:</p>
+            <p>https://testnet-rpc.swimmer.network/ext/bc/2Sk6j8TYVQc2oR1TtUz64EWHAYjDUoDQ4hpbu6FMN2JBKC77xa/rpc</p>
+        </div>
+        <div class="info-row">
+            <p>ChainID:</p>
+            <p>73771</p>
+        </div>
+        <div class="info-row">
+            <p>Symbol:</p>
+            <p>TUS.e</p>
+        </div>
+        <div class="info-row">
+            <p>Explorer:</p>
+            <p>https://testnet-explorer.swimmer.network/</p>
+        </div>
+    </div>
+</div>
 <script></script>
 </body>
 </html>
